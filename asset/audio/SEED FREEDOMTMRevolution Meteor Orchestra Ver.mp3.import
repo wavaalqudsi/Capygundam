@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/SEED FREEDOMTMRevolution Meteor Orchestra Ver.mp3-fd73e0c22c51cf3763db803c88b4b369.mp3str"
+
+[deps]
+
+source_file="res://asset/audio/SEED FREEDOMTMRevolution Meteor Orchestra Ver.mp3"
+dest_files=[ "res://.import/SEED FREEDOMTMRevolution Meteor Orchestra Ver.mp3-fd73e0c22c51cf3763db803c88b4b369.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
