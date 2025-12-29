@@ -1,0 +1,451 @@
+[gd_scene load_steps=38 format=2]
+
+[ext_resource path="res://asset/BG/MAINGANDAMU.png" type="Texture" id=1]
+[ext_resource path="res://asset/BG/WhatsApp Image 2025-11-03 at 15.44.05.jpeg" type="Texture" id=2]
+[ext_resource path="res://asset/button/Pause_BTN.png" type="Texture" id=3]
+[ext_resource path="res://asset/enemy/bee rb.png" type="Texture" id=4]
+[ext_resource path="res://asset/panel/Prise_BTN_Table.png" type="Texture" id=5]
+[ext_resource path="res://asset/panel/Window (2).png" type="Texture" id=6]
+[ext_resource path="res://asset/panel/Table_02.png" type="Texture" id=7]
+[ext_resource path="res://asset/font/batmfa__.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://scene/InGame.gd" type="Script" id=9]
+[ext_resource path="res://asset/button/Replay_BTN.png" type="Texture" id=10]
+[ext_resource path="res://asset/button/Menu_BTN.png" type="Texture" id=11]
+[ext_resource path="res://asset/button/Play_BTN.png" type="Texture" id=12]
+[ext_resource path="res://asset/panel/Header.png" type="Texture" id=13]
+[ext_resource path="res://asset/button/Health_Bar_Table.png" type="Texture" id=14]
+[ext_resource path="res://asset/button/Picsart_25-12-08_15-53-15-032.png" type="Texture" id=15]
+[ext_resource path="res://asset/panel/Cloud_02.png" type="Texture" id=16]
+[ext_resource path="res://asset/panel/Window.png" type="Texture" id=17]
+[ext_resource path="res://asset/panel/Header1.png" type="Texture" id=18]
+[ext_resource path="res://asset/panel/Header2.png" type="Texture" id=19]
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0, 0.701961, 0.0156863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.843137, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.0705882, 0.756863, 0.0980392, 1 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.866667, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 940, 780 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 30
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+extra_spacing_bottom = 9
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 400, 70 )
+
+[sub_resource type="DynamicFont" id=9]
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 3958, 1186 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+extra_spacing_bottom = 14
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 0.572549 )
+
+[sub_resource type="StyleBoxTexture" id=21]
+texture = ExtResource( 19 )
+region_rect = Rect2( 0, 0, 300, 59 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0, 0, 0, 0.482353 )
+
+[sub_resource type="StyleBoxTexture" id=19]
+texture = ExtResource( 18 )
+region_rect = Rect2( 0, 0, 399, 59 )
+
+[sub_resource type="StyleBoxTexture" id=20]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 453, 60 )
+
+[node name="InGame" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+
+[node name="BattleSide" type="Control" parent="HBoxContainer"]
+margin_right = 512.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/BattleSide"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="PlayerDMG" type="Label" parent="HBoxContainer/BattleSide"]
+margin_left = 24.0
+margin_top = 253.0
+margin_right = 98.0
+margin_bottom = 277.0
+text = "DMG:"
+
+[node name="PlayerHPBar" type="ProgressBar" parent="HBoxContainer/BattleSide"]
+margin_left = 24.0
+margin_top = 279.0
+margin_right = 167.0
+margin_bottom = 300.0
+custom_styles/fg = SubResource( 14 )
+custom_styles/bg = SubResource( 15 )
+value = 90.0
+
+[node name="PlayerRobot" type="Sprite" parent="HBoxContainer/BattleSide"]
+position = Vector2( 94.3125, 409.565 )
+scale = Vector2( 0.214312, 0.214312 )
+texture = ExtResource( 1 )
+
+[node name="EnemyDMG" type="Label" parent="HBoxContainer/BattleSide"]
+margin_left = 290.0
+margin_top = 159.0
+margin_right = 386.0
+margin_bottom = 184.0
+text = "DMG:"
+
+[node name="EnemyHPBar" type="ProgressBar" parent="HBoxContainer/BattleSide"]
+margin_left = 290.0
+margin_top = 277.0
+margin_right = 490.0
+margin_bottom = 303.0
+custom_styles/fg = SubResource( 16 )
+custom_styles/bg = SubResource( 17 )
+value = 80.0
+
+[node name="Enemy" type="Sprite" parent="HBoxContainer/BattleSide"]
+position = Vector2( 386, 398 )
+scale = Vector2( 0.428, 0.428 )
+texture = ExtResource( 4 )
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/BattleSide"]
+margin_left = 144.0
+margin_top = -196.0
+margin_right = 504.0
+margin_bottom = 81.0
+texture = ExtResource( 16 )
+expand = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/BattleSide"]
+margin_left = 167.0
+margin_top = 12.0
+margin_right = 474.0
+margin_bottom = 43.0
+custom_fonts/normal_font = SubResource( 11 )
+tab_size = 5
+text = "MUSUH MUNCUL"
+fit_content_height = true
+
+[node name="Pause" type="Button" parent="HBoxContainer/BattleSide"]
+margin_right = 83.0
+margin_bottom = 83.0
+icon = ExtResource( 3 )
+flat = true
+expand_icon = true
+
+[node name="ControlSide" type="Panel" parent="HBoxContainer"]
+margin_left = 512.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 30, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="PlayerName" type="Label" parent="HBoxContainer/ControlSide"]
+margin_left = 67.0
+margin_top = 36.0
+margin_right = 436.0
+margin_bottom = 66.0
+custom_fonts/font = SubResource( 6 )
+text = "X20A CAPYGUNDAM"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ControlSide"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 119.0
+margin_right = -20.0
+margin_bottom = -24.0
+custom_constants/separation = 30
+
+[node name="BtnAddDMG" type="Button" parent="HBoxContainer/ControlSide/VBoxContainer"]
+margin_right = 472.0
+margin_bottom = 106.0
+custom_fonts/font = SubResource( 2 )
+text = "+ DMG (QUIZZ)"
+icon = ExtResource( 7 )
+flat = true
+clip_text = true
+icon_align = 1
+
+[node name="LblPlayerHP" type="Label" parent="HBoxContainer/ControlSide/VBoxContainer"]
+margin_top = 136.0
+margin_right = 472.0
+margin_bottom = 186.0
+rect_min_size = Vector2( 300, 50 )
+custom_fonts/font = SubResource( 7 )
+custom_styles/normal = SubResource( 12 )
+text = "HP: 100"
+align = 1
+valign = 1
+clip_text = true
+uppercase = true
+
+[node name="LblPlayerDMG" type="Label" parent="HBoxContainer/ControlSide/VBoxContainer"]
+margin_top = 216.0
+margin_right = 472.0
+margin_bottom = 316.0
+rect_min_size = Vector2( 0, 100 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/normal = SubResource( 13 )
+text = "DMG: 20"
+align = 1
+valign = 1
+clip_text = true
+
+[node name="BtnStartMatch" type="Button" parent="HBoxContainer/ControlSide/VBoxContainer"]
+margin_top = 346.0
+margin_right = 472.0
+margin_bottom = 453.0
+custom_fonts/font = SubResource( 3 )
+text = "LAUNCH"
+icon = ExtResource( 5 )
+flat = true
+clip_text = true
+icon_align = 1
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="UIOverlay" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" type="Panel" parent="UIOverlay"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 4 )
+
+[node name="TextureRect" type="TextureRect" parent="UIOverlay/PauseMenu"]
+margin_left = 255.0
+margin_top = 83.0
+margin_right = 766.0
+margin_bottom = 507.0
+texture = ExtResource( 6 )
+expand = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIOverlay/PauseMenu"]
+margin_left = 310.0
+margin_top = 347.0
+margin_right = 984.0
+margin_bottom = 563.0
+rect_scale = Vector2( 0.599704, 0.599704 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="BtnMainMenu" type="Button" parent="UIOverlay/PauseMenu/HBoxContainer"]
+pause_mode = 2
+margin_right = 222.0
+margin_bottom = 216.0
+icon = ExtResource( 11 )
+flat = true
+icon_align = 1
+
+[node name="BtnRestart" type="Button" parent="UIOverlay/PauseMenu/HBoxContainer"]
+pause_mode = 2
+margin_left = 226.0
+margin_right = 448.0
+margin_bottom = 216.0
+icon = ExtResource( 10 )
+flat = true
+icon_align = 1
+
+[node name="BtnContinue" type="Button" parent="UIOverlay/PauseMenu/HBoxContainer"]
+pause_mode = 2
+margin_left = 452.0
+margin_right = 674.0
+margin_bottom = 216.0
+icon = ExtResource( 12 )
+flat = true
+icon_align = 1
+
+[node name="Panel" type="Panel" parent="UIOverlay/PauseMenu"]
+margin_left = 385.0
+margin_top = 104.0
+margin_right = 650.0
+margin_bottom = 144.0
+custom_styles/panel = SubResource( 21 )
+
+[node name="WinMenu" type="Panel" parent="UIOverlay"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -144, 79 )
+custom_styles/panel = SubResource( 18 )
+
+[node name="TextureRect" type="TextureRect" parent="UIOverlay/WinMenu"]
+margin_left = 310.0
+margin_top = 83.0
+margin_right = 725.0
+margin_bottom = 498.0
+texture = ExtResource( 17 )
+expand = true
+
+[node name="Panel" type="Panel" parent="UIOverlay/WinMenu/TextureRect"]
+margin_left = 93.0
+margin_top = 18.0
+margin_right = 315.0
+margin_bottom = 45.0
+custom_styles/panel = SubResource( 19 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIOverlay/WinMenu"]
+margin_left = 358.0
+margin_top = 366.0
+margin_right = 1032.0
+margin_bottom = 582.0
+rect_scale = Vector2( 0.474024, 0.474024 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="BtnMainMenu" type="Button" parent="UIOverlay/WinMenu/HBoxContainer"]
+pause_mode = 2
+margin_right = 222.0
+margin_bottom = 216.0
+icon = ExtResource( 11 )
+flat = true
+icon_align = 1
+
+[node name="BtnRestart" type="Button" parent="UIOverlay/WinMenu/HBoxContainer"]
+pause_mode = 2
+margin_left = 226.0
+margin_right = 448.0
+margin_bottom = 216.0
+icon = ExtResource( 10 )
+flat = true
+icon_align = 1
+
+[node name="BtnNextStage" type="Button" parent="UIOverlay/WinMenu/HBoxContainer"]
+pause_mode = 2
+margin_left = 452.0
+margin_right = 674.0
+margin_bottom = 216.0
+icon = ExtResource( 12 )
+flat = true
+icon_align = 1
+
+[node name="LoseMenu" type="Panel" parent="UIOverlay"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -144, 79 )
+custom_styles/panel = SubResource( 18 )
+
+[node name="TextureRect" type="TextureRect" parent="UIOverlay/LoseMenu"]
+margin_left = 310.0
+margin_top = 83.0
+margin_right = 725.0
+margin_bottom = 498.0
+texture = ExtResource( 17 )
+expand = true
+
+[node name="Panel" type="Panel" parent="UIOverlay/LoseMenu/TextureRect"]
+margin_left = 76.0
+margin_top = 18.0
+margin_right = 331.0
+margin_bottom = 45.0
+custom_styles/panel = SubResource( 20 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIOverlay/LoseMenu"]
+margin_left = 358.0
+margin_top = 366.0
+margin_right = 1032.0
+margin_bottom = 582.0
+rect_scale = Vector2( 0.474024, 0.474024 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="BtnMainMenu" type="Button" parent="UIOverlay/LoseMenu/HBoxContainer"]
+pause_mode = 2
+margin_left = 113.0
+margin_right = 335.0
+margin_bottom = 216.0
+icon = ExtResource( 11 )
+flat = true
+icon_align = 1
+
+[node name="BtnRestart" type="Button" parent="UIOverlay/LoseMenu/HBoxContainer"]
+pause_mode = 2
+margin_left = 339.0
+margin_right = 561.0
+margin_bottom = 216.0
+icon = ExtResource( 10 )
+flat = true
+icon_align = 1
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="HBoxContainer/BattleSide/Pause" to="." method="_on_Pause_pressed"]
+[connection signal="pressed" from="HBoxContainer/ControlSide/VBoxContainer/BtnAddDMG" to="." method="_on_BtnAddDMG_pressed"]
+[connection signal="pressed" from="HBoxContainer/ControlSide/VBoxContainer/BtnStartMatch" to="." method="_on_BtnStartMatch_pressed"]
+[connection signal="pressed" from="UIOverlay/PauseMenu/HBoxContainer/BtnMainMenu" to="." method="_on_BtnMainMenu_pressed"]
+[connection signal="pressed" from="UIOverlay/PauseMenu/HBoxContainer/BtnRestart" to="." method="_on_BtnRestart_pressed"]
+[connection signal="pressed" from="UIOverlay/PauseMenu/HBoxContainer/BtnContinue" to="." method="_on_BtnContinue_pressed"]
+[connection signal="pressed" from="UIOverlay/WinMenu/HBoxContainer/BtnMainMenu" to="." method="_on_BtnMainMenu_pressed"]
+[connection signal="pressed" from="UIOverlay/WinMenu/HBoxContainer/BtnRestart" to="." method="_on_BtnRestart_pressed"]
+[connection signal="pressed" from="UIOverlay/WinMenu/HBoxContainer/BtnNextStage" to="." method="_on_BtnNextStage_pressed"]
+[connection signal="pressed" from="UIOverlay/LoseMenu/HBoxContainer/BtnMainMenu" to="." method="_on_BtnMainMenu_pressed"]
+[connection signal="pressed" from="UIOverlay/LoseMenu/HBoxContainer/BtnRestart" to="." method="_on_BtnRestart_pressed"]
